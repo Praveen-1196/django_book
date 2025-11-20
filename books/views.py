@@ -178,6 +178,6 @@ def login(request):
         token,
         httponly=True,
         samesite="None",
-        secure=False
+        secure=True
     )
     return res
