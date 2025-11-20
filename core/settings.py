@@ -30,7 +30,8 @@ SECRET_KEY = 'django-insecure-jfhw1t1&8^t*x(0ok$pn^zcb7mgh4hxcwo7#y^in&_7t24^(k+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://book-ijqy.onrender.com","*"]
+ALLOWED_HOSTS = ["book-ijqy.onrender.com",
+                 "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -68,11 +69,10 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://book-ijqy.onrender.com",
     "https://bookapp-rose-beta.vercel.app",
+    "http://localhost:5173",
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://book-ijqy.onrender.com",
-]
+
 
 
 ROOT_URLCONF = 'core.urls'
