@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from django.core.mail import send_mail
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
@@ -150,13 +149,7 @@ def register(request):
         password=password,
         email=email
     )
-    if email:
-        send_mail(
-            subject="📚🖋️ Welcome to Our Literary Corner!",
-            message=f"Hello {username},\n\n Welcome to our little world of words!\n\n Happy reading! ✨\n\n",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[email],
-        )
+
 
     return JsonResponse({"message": "User registered successfully"})
 
