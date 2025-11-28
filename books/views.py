@@ -13,6 +13,9 @@ from django.conf import settings
 import datetime
 import json
 
+from django.shortcuts import render
+from .models import Book
+
 
 def validate_token(request):
     token = request.COOKIES.get("token")
@@ -181,3 +184,7 @@ def login(request):
         secure=True
     )
     return res
+
+def book_list_page(request):
+    books = Book.objects.all()
+    return render(request, "book_list.html", {"books": books})

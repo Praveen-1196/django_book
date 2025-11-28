@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+        .book-card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 320px;
+        }
+        img { width: 100%; border-radius: 8px; }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        h1 { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<h1>Book Collection</h1>
+
+<div class="grid">
+    {% for book in books %}
+        <div class="book-card">
+            <h2>{{ book.name }}</h2>
+            <p><b>Author:</b> {{ book.author }}</p>
+            <p><i>{{ book.quote }}</i></p>
+            {% if book.image %}
+                <img src="{{ book.image }}" alt="{{ book.name }}">
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
